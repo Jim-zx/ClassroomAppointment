@@ -1,0 +1,67 @@
+登录页面：账号密码登入
+主页面：{
+  主要模块：{
+    管理各业务（管理员），
+    模块管理:{
+      添加模块，
+      删除模块,
+
+    },
+    学生信息，
+    查看教室情况，
+    预约教室，
+  }
+}
+
+
+
+数据库：{
+  用户:{
+    username,2<=15
+    email,5<=15 shuzi only
+    password,5<=20
+    authorityId,"student" or "manage"
+  }
+  模块，
+  教室{
+    id,
+    tower(1,2,3,E)栋,
+    num(101)编号,
+    type(实验室，教室)
+  },
+  课程{
+    id,
+    name,
+    principalId(负责人id),
+  },
+  时间表相关{
+    id,
+    room_id,
+    active_id,
+    lesson_id,
+
+    start_date,
+    end_date,
+    day(1-7),
+    time时间段(1,2,3,4,5,6,7,8,9,10,11,1~2,3~4,5~6,7~8,9~11)
+  }
+  活动{
+    id,
+    name,
+    principalId(负责人id),
+    create_time,
+    accept(boolean),
+    room_id,
+    date(精准到日期),
+    time时间段(1,2,3,4,5,6,7,8,9,10,11,1~2,3~4,5~6,7~8,9~11),
+  }，
+}
+
+改动：
+邮箱改为账号
+认证id变为role{
+  1："host",
+  2: "manage",
+  3. "student"
+}
+
